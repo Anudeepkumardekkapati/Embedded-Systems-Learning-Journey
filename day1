@@ -1,0 +1,81 @@
+# IR Remote Controlled Lamp Using ESP32
+
+## Project Overview
+
+This project demonstrates how to control a lamp wirelessly using an IR remote, ESP32, IR receiver, and relay module.
+
+When a button is pressed on the IR remote, the IR receiver captures the signal. The ESP32 processes the received command and controls the relay to turn the LED lamp ON or OFF.
+
+## Components Used
+
+- ESP32 Development Board
+- IR Remote
+- IR Receiver Module
+- 5V Relay Module
+- LED
+- 220Ω Resistor
+- Jumper Wires
+
+## Circuit Connections
+
+### IR Receiver
+
+| IR Receiver Pin | ESP32 Pin |
+|---|---|
+| VCC | 3.3V |
+| GND | GND |
+| OUT | GPIO 14 |
+
+### Relay Module
+
+| Relay Pin | ESP32 Pin |
+|---|---|
+| VCC | 5V |
+| GND | GND |
+| IN | GPIO 27 |
+
+### LED Through Relay
+
+| Connection | Destination |
+|---|---|
+| ESP32 5V | Relay COM |
+| Relay NO | 220Ω Resistor |
+| Resistor | LED Anode (+) |
+| LED Cathode (-) | ESP32 GND |
+
+## Working Principle
+
+1. The user presses a button on the IR remote.
+2. The IR receiver receives the infrared signal.
+3. The ESP32 decodes the button command.
+4. The ESP32 sends a control signal to the relay.
+5. The relay switches the LED lamp ON or OFF.
+
+## Remote Button Commands
+
+| Remote Button | Decimal Code | Action |
+|---|---:|---|
+| POWER | 162 | Lamp ON |
+| MENU | 226 | Lamp OFF |
+
+## GPIO Configuration
+
+- GPIO 14 – IR Receiver Signal
+- GPIO 27 – Relay Control
+
+## Software and Tools
+
+- Arduino IDE
+- Wokwi Simulator
+- Arduino-IRremote Library
+- ESP32
+
+## Project Result
+
+Successfully simulated an IR Remote Controlled Lamp using ESP32 in Wokwi. The lamp can be controlled wirelessly using the IR remote.
+
+## Future Improvements
+
+- Control multiple appliances using different remote buttons.
+- Replace the simulated LED with a properly rated real lamp and relay setup.
+- Add Wi-Fi-based control through a web dashboard.
